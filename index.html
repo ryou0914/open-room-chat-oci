@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Room Chat</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell" aria-label="실시간 채팅 앱">
+      <aside class="info-panel" aria-label="방 정보">
+        <div>
+          <p class="eyebrow">Live Room</p>
+          <h1>오픈 채팅방</h1>
+          <p class="intro">접속하면 자동으로 아이디가 만들어지고, 같은 방의 메시지가 모두에게 실시간으로 보입니다.</p>
+        </div>
+
+        <dl class="room-stats">
+          <div>
+            <dt>내 아이디</dt>
+            <dd id="myId">연결 중</dd>
+          </div>
+          <div>
+            <dt>접속자</dt>
+            <dd><span id="onlineCount">0</span>명</dd>
+          </div>
+        </dl>
+
+        <section class="people" aria-label="접속자 목록">
+          <h2>지금 있는 사람</h2>
+          <ul id="userList"></ul>
+        </section>
+      </aside>
+
+      <section class="chat-panel" aria-label="채팅창">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Room #1</p>
+            <h2>모두의 대화</h2>
+          </div>
+          <span id="connectionStatus" class="status">연결 중</span>
+        </header>
+
+        <ol id="messages" class="messages" aria-live="polite"></ol>
+
+        <form id="messageForm" class="composer" autocomplete="off">
+          <label class="sr-only" for="messageInput">메시지 입력</label>
+          <input id="messageInput" name="message" type="text" maxlength="400" placeholder="메시지를 입력하세요" required>
+          <button type="submit">보내기</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
